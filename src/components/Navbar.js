@@ -7,6 +7,7 @@ const Navbar = () => {
       <Button
         color="black"
         boxShadow="lg"
+        bg="white"
         // _focus={{ background: "gray.800", color: "white" }}
         _hover={{ background: "gray.800", color: "white" }}
         _active={{ background: "green.200", color: "black" }}
