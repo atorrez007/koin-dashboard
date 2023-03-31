@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Box,
   Divider,
@@ -8,10 +9,13 @@ import {
   Grid,
   GridItem,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import Blockies from "react-blockies";
 
 const Panel = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [defaultAccount, setDefaultAccount] = useState(
+    "1MWSQCSg8tn2r2eY4ov3wH1ZEkxB7Wc5pW"
+  );
   return (
     <Box
       maxW="80%"
@@ -27,7 +31,18 @@ const Panel = () => {
       "
     >
       <HStack>
-        <Box w="auto" bg="white" m="24px" p="24px" borderRadius="2px">
+        <Box
+          bg="orange"
+          w="auto"
+          // bg="white"
+          m="24px"
+          p="24px"
+          borderRadius="2px"
+        >
+          <Box>
+            <Blockies seed={defaultAccount} size={8} scale={8} />
+          </Box>
+
           <Text
             display="flex"
             justifyContent="center"
@@ -109,7 +124,7 @@ const Panel = () => {
               <Text>Test</Text>
             </Box>
           </GridItem>
-        )}{" "}
+        )}
         {isLoading ? (
           <Box display="flex" justifyContent="center">
             <Spinner color="purple.900" size="lg" speed="0.70s" />
@@ -129,7 +144,7 @@ const Panel = () => {
               <Text>Test</Text>
             </Box>
           </GridItem>
-        )}{" "}
+        )}
         {isLoading ? (
           <Box display="flex" justifyContent="center">
             <Spinner color="purple.900" size="lg" speed="0.70s" />
