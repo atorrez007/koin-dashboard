@@ -1,13 +1,15 @@
-import { Box, Divider, HStack, Text, Image } from "@chakra-ui/react";
-import React from "react";
+import { Box, Divider, HStack, Text, Image, Spinner } from "@chakra-ui/react";
+import React, { useState } from "react";
 
 const Panel = () => {
+  const [balance, setBalance] = useState("");
   return (
     <Box
       maxW="80%"
       h="75%"
       //Switch to white later
-      bg="gray.600"
+      // bg="gray.600"
+      bg="white"
       borderRadius="4px"
       margin="auto"
       mt="-345px"
@@ -39,23 +41,36 @@ const Panel = () => {
       >
         <HStack>
           <Box w="auto">
-            <Text fontSize="sm" color="gray.500" mb="3" ml="2">
-              My Balance
-            </Text>
-
-            <Box display="flex">
-              <Image
-                src="https://etherscan.io/token/images/koinos_128.png?v=3public/koinos_32.png"
-                w="32px"
-                mr="2"
-                alt="koinos-logo"
-              ></Image>
-              <Text fontSize="xl" fontWeight="medium">
-                24 Koin
+            <Box display="flex" justifyContent="center">
+              <Text
+                fontSize="sm"
+                color="gray.500"
+                mb="3"
+                ml="2"
+                justifyContent="center"
+              >
+                My Balance
               </Text>
             </Box>
+
+            {balance ? (
+              <Box display="flex" justifyContent="center">
+                <Image
+                  src="https://etherscan.io/token/images/koinos_128.png?v=3public/koinos_32.png"
+                  w="32px"
+                  mr="2"
+                  alt="koinos-logo"
+                ></Image>
+                <Text fontSize="xl" fontWeight="medium">
+                  1,000 Koin
+                </Text>
+              </Box>
+            ) : (
+              <Box display="flex" justifyContent="center">
+                <Spinner color="purple.900" size="lg" speed="0.70s" />
+              </Box>
+            )}
           </Box>
-          <Box></Box>
         </HStack>
       </Box>
     </Box>
