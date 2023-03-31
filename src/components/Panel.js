@@ -9,13 +9,10 @@ import {
   Grid,
   GridItem,
 } from "@chakra-ui/react";
-import Blockies from "react-blockies";
 
 const Panel = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [defaultAccount, setDefaultAccount] = useState(
-    "1MWSQCSg8tn2r2eY4ov3wH1ZEkxB7Wc5pW"
-  );
+
   return (
     <Box
       maxW="80%"
@@ -30,19 +27,15 @@ const Panel = () => {
       box-shadow: 0px 5px 20px 25px #0000001A;
       "
     >
-      <HStack>
-        <Box
-          bg="orange"
-          w="auto"
-          // bg="white"
-          m="24px"
-          p="24px"
-          borderRadius="2px"
-        >
-          <Box>
-            <Blockies seed={defaultAccount} size={8} scale={8} />
-          </Box>
-
+      <Box
+        // bg="orange"
+        w="auto"
+        bg="white"
+        m="24px"
+        pt="12px"
+        mr="12px"
+      >
+        <Box>
           <Text
             display="flex"
             justifyContent="center"
@@ -53,8 +46,32 @@ const Panel = () => {
             Hello, User
           </Text>
         </Box>
-      </HStack>
+      </Box>
+
       <Divider w="auto" mx="96px" borderColor={"gray.600"} />
+      {/* <Box
+        bg="red"
+        style={{
+          // display: "block",
+          width: "50px",
+          height: "50px",
+          borderRadius: "50%",
+          // marginRight: "10px",
+
+          // background: "orange",
+        }}
+      >
+        <Box
+          as="span"
+          dangerouslySetInnerHTML={{ __html: identicon }}
+          style={{
+            // display: "block",
+            width: "25px",
+            height: "25px",
+          }}
+        ></Box>
+      </Box> */}
+
       <Box
         w="auto"
         bg="white"
